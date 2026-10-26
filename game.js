@@ -15,7 +15,7 @@ function makeLevel(n){const r=rng(n*92821),colorCount=Math.min(6,2+Math.floor((n
 function person(c){return `<i class="person" style="background:${HEX[c]}"></i>`}
 function busEl(c,small=false){return `<div class="${small?'miniBus':'trackBus'}" style="background:${HEX[c]}">${small?'<small>BUS</small>':''}</div>`}
 function showScreen(id){$$('.screen').forEach(x=>x.classList.remove('active'));$('#'+id).classList.add('active')}
-function start(n){level=Math.max(1,Math.min(100,n));state=makeLevel(level);history=[];$('#levelNo').textContent=level;$('#coins').textContent=coins;showScreen('game');render();}
+function start(n){level=Math.max(1,Math.min(100,n));document.body.dataset.theme=['city','beach','night','winter'][Math.floor((level-1)/25)];state=makeLevel(level);history=[];$('#levelNo').textContent=level;$('#coins').textContent=coins;showScreen('game');render();}
 function mission(){let counts={};state.queues.flat().forEach(c=>counts[c]=(counts[c]||0)+1);$('#mission').innerHTML=Object.entries(counts).map(([c,v])=>`<span class="missionItem"><i class="dot" style="background:${HEX[c]}"></i>${v}</span>`).join('')||'<b>道路畅通！</b>'}
 function render(){mission();const q=$('#queues');q.innerHTML=state.queues.map((arr,i)=>`<div class="queue q${i}">${arr.slice(0,8).map(person).join('')}</div>`).join('');
  const d=$('#docks');d.innerHTML=Array.from({length:state.maxDock},(_,i)=>`<div class="dock" data-i="${i}">${state.docks[i]?busEl(state.docks[i].color,true):''}</div>`).join('');$('#dockCount').textContent=`${state.docks.length}/${state.maxDock}`;
