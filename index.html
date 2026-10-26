@@ -1,64 +1,9 @@
-<!doctype html>
-<html lang="zh-Hans">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#3b7cff">
-  <title>Loop City: Bus Jam</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <main id="app">
-    <section id="home" class="screen active">
-      <div class="sky"><span class="cloud c1"></span><span class="cloud c2"></span></div>
-      <div class="brand"><span>LOOP CITY</span><b>BUS JAM</b><small>Traffic Puzzle</small></div>
-      <div class="hero-bus bus yellow"><i></i><em></em><strong>BUS</strong></div>
-      <div class="home-people" id="homePeople"></div>
-      <button class="big green" id="playBtn">▶ 开始游戏</button>
-      <button class="big blue" id="codeBtn">🔑 输入关卡代码</button>
-      <button class="smallBtn" id="levelsBtn">🏆 关卡选择</button>
-      <p class="copyright">原创网页益智游戏 · 无第三方美术素材</p>
-    </section>
-
-    <section id="game" class="screen">
-      <header class="topbar">
-        <button id="backHome">‹</button><div class="levelPill">关卡 <b id="levelNo">1</b></div>
-        <div class="coins">● <span id="coins">320</span></div>
-      </header>
-      <div class="mission" id="mission"></div>
-      <div class="world" id="world">
-        <div class="road ring"><div class="island"><span class="tree t1"></span><span class="tree t2"></span><span class="fountain"></span></div></div>
-        <div class="queueArea" id="queues"></div>
-        <div class="movingBus" id="movingBus"></div>
-        <div class="toast" id="toast"></div>
-      </div>
-      <div class="dockTitle">待发车位 <span id="dockCount"></span></div>
-      <div class="docks" id="docks"></div>
-      <div class="controls">
-        <button id="undoBtn">↶<span>撤销</span><b id="undoCount">3</b></button>
-        <button id="hintBtn">💡<span>提示</span><b id="hintCount">3</b></button>
-        <button id="shuffleBtn">🔀<span>洗牌</span><b id="shuffleCount">3</b></button>
-      </div>
-    </section>
-
-    <section id="levels" class="screen panelScreen">
-      <header class="panelHead"><button data-close>‹</button><h2>关卡</h2><span></span></header>
-      <div class="levelGrid" id="levelGrid"></div>
-    </section>
-  </main>
-
-  <div class="modal" id="codeModal" aria-hidden="true"><div class="card">
-    <button class="x" data-modal-close>×</button><div class="keyIcon">🔑</div><h2>输入关卡代码</h2>
-    <p>输入 LOOP-XXX-XX 格式代码继续游戏</p>
-    <input id="codeInput" maxlength="11" placeholder="LOOP-001-AB" autocomplete="off">
-    <div class="error" id="codeError"></div><button class="confirm" id="confirmCode">确认</button>
-  </div></div>
-
-  <div class="modal" id="winModal" aria-hidden="true"><div class="card winCard">
-    <div class="ribbon">关卡完成</div><div class="stars">★★★</div><h2 id="winTitle">太棒了！</h2>
-    <p>关卡代码</p><code id="levelCode"></code><button class="copy" id="copyCode">复制代码</button>
-    <button class="confirm" id="nextBtn">下一关</button><button class="ghost" id="winHome">返回首页</button>
-  </div><div class="confetti" id="confetti"></div></div>
-  <script src="game.js"></script>
-</body>
-</html>
+<!doctype html><html lang="zh-Hans"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Loop City Deluxe</title><link rel="stylesheet" href="style.css"></head><body>
+<div id="app">
+<section id="home" class="screen active"><div class="homeShade"></div><div class="logo"><span>LOOP</span><b>CITY</b><small>BUS JAM</small></div><img class="heroBus" src="assets/bus/yellow.png"><div class="homePassengers"><img src="assets/people/red.png"><img src="assets/people/blue.png"></div><div class="homeActions"><button id="play" class="cta play">PLAY GAME <i>▶</i></button><button id="enter" class="cta code">🔑 ENTER LEVEL CODE</button><button id="select" class="round">🏆<small>Levels</small></button><button class="round">⚙️<small>Settings</small></button><button class="round">📊<small>Stats</small></button><button class="round">🎮<small>More</small></button></div></section>
+<section id="game" class="screen"><div id="scene" class="scene city"><img id="sceneBg" src="assets/bg/city.png"><header><button id="homeBtn">‹</button><button class="pause">Ⅱ</button><div class="level">LEVEL <b id="levelNum">1</b></div><div class="money">🪙 <b id="coins">320</b></div></header><div id="needs" class="needs"></div><div id="passengers" class="passengers"></div><div id="buses" class="buses"></div><div id="fx" class="fx"></div></div><div class="tray"><div id="slots" class="slots"></div><div class="powerups"><button id="undo">↶<small>UNDO</small><em>3</em></button><button id="hint">💡<small>HINT</small><em>3</em></button><button id="shuffle">🔀<small>SHUFFLE</small><em>3</em></button></div></div></section>
+<section id="levels" class="screen levelScreen"><div class="levelTop"><button id="levelsBack">‹</button><h1>LEVELS</h1></div><div id="grid" class="grid"></div></section>
+</div>
+<div id="codeModal" class="modal"><div class="dialog"><button class="close">×</button><div class="key">🔑</div><h2>ENTER LEVEL CODE</h2><input id="codeInput" placeholder="LOOP-XXX-XX" maxlength="11"><p id="err"></p><button id="confirm">CONFIRM</button></div></div>
+<div id="win" class="modal"><div class="dialog win"><h1>LEVEL CLEARED!</h1><div class="stars">★★★</div><p>Your level code</p><code id="winCode"></code><button id="copy">COPY CODE</button><button id="next">NEXT LEVEL ▶</button><button id="winHome">HOME</button></div><div class="confetti"></div></div>
+<script src="game.js"></script></body></html>
