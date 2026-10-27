@@ -1,0 +1,1 @@
+Audio is synthesized locally with Web Audio after user interaction. No external audio files or network access required.

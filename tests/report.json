@@ -1,0 +1,167 @@
+{
+  "layouts": [
+    {
+      "viewport": [
+        320,
+        568
+      ],
+      "canvas": {
+        "x": 25.359375,
+        "y": 50,
+        "width": 269.265625,
+        "height": 460
+      },
+      "passed": true
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "canvas": {
+        "x": 0,
+        "y": 82.875,
+        "width": 390,
+        "height": 666.25
+      },
+      "passed": true
+    },
+    {
+      "viewport": [
+        430,
+        932
+      ],
+      "canvas": {
+        "x": 0,
+        "y": 92.703125,
+        "width": 430,
+        "height": 734.578125
+      },
+      "passed": true
+    },
+    {
+      "viewport": [
+        757,
+        1248
+      ],
+      "canvas": {
+        "x": 124.5,
+        "y": 184.078125,
+        "width": 508,
+        "height": 867.828125
+      },
+      "passed": true
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "canvas": {
+        "x": 499.3125,
+        "y": 67,
+        "width": 441.359375,
+        "height": 754
+      },
+      "passed": true
+    },
+    {
+      "viewport": [
+        844,
+        390
+      ],
+      "canvas": {
+        "x": 340.046875,
+        "y": 51,
+        "width": 163.890625,
+        "height": 280
+      },
+      "passed": true
+    }
+  ],
+  "levels": [
+    {
+      "level": 1,
+      "buses": 7,
+      "delivered": 28,
+      "passed": true
+    },
+    {
+      "level": 2,
+      "buses": 8,
+      "delivered": 32,
+      "passed": true
+    },
+    {
+      "level": 3,
+      "buses": 9,
+      "delivered": 36,
+      "passed": true
+    },
+    {
+      "level": 4,
+      "buses": 10,
+      "delivered": 40,
+      "passed": true
+    },
+    {
+      "level": 5,
+      "buses": 11,
+      "delivered": 44,
+      "passed": true
+    },
+    {
+      "level": 6,
+      "buses": 12,
+      "delivered": 48,
+      "passed": true
+    },
+    {
+      "level": 7,
+      "buses": 13,
+      "delivered": 52,
+      "passed": true
+    },
+    {
+      "level": 8,
+      "buses": 14,
+      "delivered": 56,
+      "passed": true
+    },
+    {
+      "level": 9,
+      "buses": 15,
+      "delivered": 60,
+      "passed": true
+    },
+    {
+      "level": 10,
+      "buses": 16,
+      "delivered": 64,
+      "passed": true
+    },
+    {
+      "level": 11,
+      "buses": 17,
+      "delivered": 68,
+      "passed": true
+    },
+    {
+      "level": 12,
+      "buses": 18,
+      "delivered": 72,
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "undo": true,
+  "blocking": true,
+  "animation_and_input_lock": true,
+  "pointer_mapping": true,
+  "ui_controls": [
+    "undo",
+    "level_picker",
+    "hint",
+    "sound"
+  ]
+}

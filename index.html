@@ -1,1 +1,66 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"><title>Bus Loop V3</title><link rel="stylesheet" href="css/game.css"></head><body><main><header><button id="reset">↻</button><b>LEVEL <span id="lv">1</span></b><button id="sound">♪</button></header><section id="queue"></section><div id="stage"><canvas id="c"></canvas><div id="toast"></div></div><section id="bay"><span>🎟</span><div id="slots"></div></section><nav><button id="hint">💡<small>HINT</small></button><button id="undo">↶<small>UNDO</small></button><button id="clear">🧲<small>CLEAR</small></button></nav></main><dialog id="result"><div>🏆</div><h2>LEVEL CLEAR!</h2><button id="next">NEXT</button></dialog><script src="js/game.js"></script></body></html>
+<!doctype html>
+<html lang="zh-Hans">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#123d40">
+  <title>Jamming Bus</title>
+  <link rel="icon" href="assets/buses/red.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <main class="shell">
+    <header>
+      <div class="brand">
+        <span class="brand-icon">↗</span>
+        <div>
+          BUS LOOP
+          <small>TRAFFIC PUZZLE · BUS LOOP · JAM BUS </small>
+        </div>
+      </div>
+      <button id="sound" class="icon" aria-label="Toggle sound">♪</button>
+    </header>
+
+    <section class="game-wrap">
+      <div class="game">
+        <canvas id="game" width="960" height="1640" aria-label="Bus color puzzle game, tap a bus to dispatch it"></canvas>
+        <div id="loading">Loading…</div>
+        <div id="toast" role="status" aria-live="polite"></div>
+        <div id="modal" hidden>
+          <div class="modal-card">
+            <span class="eyebrow">BUS LOOP</span>
+            <h1 id="modal-title"></h1>
+            <p id="modal-text"></p>
+            <button id="modal-next">Next Level →</button>
+            <button id="modal-retry" class="subtle">Retry</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <button id="undo"><b>↶</b><span>Undo</span></button>
+      <button id="hint"><b>✦</b><span>Hint</span></button>
+      <button id="restart"><b>↻</b><span>Replay</span></button>
+      <button id="levels"><b>▦</b><span>Level</span></button>
+    </footer>
+
+    <div id="level-picker" hidden>
+      <div class="picker-card">
+        <div class="picker-title">
+          <h2>Select Level</h2>
+          <button id="close-picker" class="icon" aria-label="Close">×</button>
+        </div>
+        <p></p>
+        <div id="level-grid"></div>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/levels.js"></script>
+  <script src="js/game.js"></script>
+</body>
+
+</html>
