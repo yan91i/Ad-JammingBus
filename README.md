@@ -1,5 +1,18 @@
-# Loop City V4
+# Loop Lane: Bus Puzzle
+An original HTML5 traffic-loop puzzle inspired by the supplied gameplay references.
 
-重新生成并切分的透明 PNG 素材版本，不再从旧概念图抠图。布局从上至下固定为：乘客队列、已选巴士停车位、满载巴士离场道路、待选择巴士堆、道具栏。
+## Run
+Open `index.html` directly, or serve the folder with any static server. No build step, CDN, or network connection is required.
 
-直接打开 index.html 运行。包含 100 关、LOOP-XXX-XX 代码、关卡选择、本地进度、Undo、Hint、Shuffle。
+## Controls
+Tap/click a bus whose arrow path is clear. Match the first passenger color. Off-color buses occupy limited parking slots. Clear every bus to win.
+
+## Structure
+- `index.html` screen structure
+- `css/main.css` responsive portrait-first art and UI
+- `js/levels.js` 30 deterministic stages
+- `js/game.js` canvas renderer and puzzle rules
+- `js/audio.js` procedural sound effects
+- `js/main.js` UI wiring and local save
+
+The project uses original CSS/canvas art and does not include extracted artwork, audio, branding, or code from the reference APK.
